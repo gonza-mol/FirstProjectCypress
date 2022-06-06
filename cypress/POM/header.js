@@ -16,6 +16,7 @@ class headerLocators{
         this.menItems = '#categorymenu>nav>ul>li:nth-child(6)>a'
         this.hairCareItems = '#categorymenu>nav>ul>li:nth-child(7)>a'
         this.booksItems = '#categorymenu>nav>ul>li:nth-child(8)>a'
+        
 
     }
 
@@ -85,5 +86,7 @@ export default class Help{
     getBooksItems(){
         return cy.get(this.locators.booksItems);
     }
+
+    
 
 }
