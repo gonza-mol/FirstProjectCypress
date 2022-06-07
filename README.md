@@ -12,3 +12,18 @@
 
 
 * Si quiero hacer un assert de la url de la web, que estoy utilizando es con el comando cy.url(), y quedaría así cy.url().should('include','nombre de la url o parte del nombre')
+
+* Si quiero ejecutar test usando comando en la consola, y no la UI. Esto se hace de la siguiente manera:
+En la consola si veo que se siguen ejecutando test, hago ctrl+c, verificar que en la terminal de visual estudio, en la parte derecha la opción seleccionada sea Bash, y no powersell.
+y en la consola hay que escribir el siguiente comando ./node_modules/.bin/cypress run (headless mode)
+el comando anterior va ejecutar todos los test que tengamos en la suite, pero sin abrir el browser
+y si quiero ejecutar el comando pero en no headless mode (aca se abre un browser por defecto es electron, mientras se corren los test), se hace lo siguiente:
+./node_modules/.bin/cypress run --headed (NO headless mode)
+y si quier ejecutar el comando anterior, pero ejecutando con el browser de Chrome, se hace lo siguiente:
+./node_modules/.bin/cypress run --browser chrome
+y si quiero ejecutar a través de comando pero en vez de hacer ejectuar todos los test, puedo hacer correr solo un test individual o una carpeta solamente y eso es através del siguiente comando:
+./node_modules/.bin/cypress run --spec cypress/integration/miTests.spec.js 
+(se pone el mismo comando y con los dos guiones medios --spec luego se pone la ruta del test que se quiere ejecutar con la barra invertida "/")
+y si quisiera ejecutar una carpeta que contiene x test cases, se hace lo siguiente:
+./node_modules/.bin/cypress run --spec cypress/integration/*   (se borra el test individual y se deja /*, para que ejecute todos los test que hay dentro de esa carpeta)
+
